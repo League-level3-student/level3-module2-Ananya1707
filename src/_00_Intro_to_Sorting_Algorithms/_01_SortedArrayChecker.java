@@ -8,9 +8,16 @@ public class _01_SortedArrayChecker {
      * The method returns true if the integer array is in ascending order
      * and false otherwise.
      */
-    public static boolean intArraySorted(int[] arr) {
+    public static boolean intArraySorted(int[] arr) { 
+    	
+        for (int i = 0; i < arr.length-1; i++) {
+        	if(arr[i]>arr[i+1]) {
+        		return false;
+        	}
+        }
         
-        return false;
+        return true;
+
     }
 
     /*
