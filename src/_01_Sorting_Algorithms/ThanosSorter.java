@@ -1,5 +1,9 @@
 package _01_Sorting_Algorithms;
 
+import java.util.Random;
+
+import _00_Intro_to_Sorting_Algorithms._01_SortedArrayChecker;
+
 public class ThanosSorter extends Sorter {
     public ThanosSorter() {
         type = "Thanos";
@@ -45,6 +49,58 @@ public class ThanosSorter extends Sorter {
      */
     @Override
     void sort(int[] arr, SortingVisualizer display) {
+    	Random r = new Random();
+    	boolean notSorted = true;
+    	int start = 0;
+		int end = arr.length/2;
+		
+    	while(notSorted) {
+    		notSorted = false;
+    		
+    		for (int i = 0; i < arr.length-1; i++) {
+    			
+            	if(arr[i]>arr[i+1]) {
+            		
+            		int ran = r.nextInt(1);
+            		System.out.println(ran);
+            		
+            		if(ran == 0) {
+            			
+            			for(int n = i; n < end; n++) {
+                			arr[n] = 0;
+                		}
+            			end = (end-i)/2;
+            		}
+            		else {
+            			
+            			for(int n = i; n > start; n--) {
+                			arr[n] = 0;
+                		}
+            			start = (start-i)/2;
+            		}
+            		
+            		notSorted = true;
+            		break;
+            	}
+            	
+
+            	
+            }
+    		
+    		try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+        	display.updateDisplay();
+
+
+    	}
+    	
+    	display.updateDisplay();
+    	
+    	
         
     }
 }
