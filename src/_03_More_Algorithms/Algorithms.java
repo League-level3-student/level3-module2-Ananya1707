@@ -91,4 +91,58 @@ public class Algorithms {
     	}
         return false;
     }
+    
+    public static List<Double> sortScores(List<Double> results) {
+    	for (int k = 0; k < results.size(); k++) {
+	    	for (int i = 0; i < results.size()-1; i++) {
+	    		if( results.get(i) > results.get(i+1) ) {
+	    			Double num1 = results.get(i);
+	    			Double num2 = results.get(i+1);
+	    			
+	    			results.set(i, num2);
+	    			results.set(i+1, num1);
+
+	    		}
+	    	}
+    	 }
+    	
+    	return results;
+    }
+    
+
+	public static List<String> sortDNA(List<String> unsortedSequences) {
+		// TODO Auto-generated method stub
+		for (int k = 0; k < unsortedSequences.size(); k++) {
+	    	for (int i = 0; i < unsortedSequences.size()-1; i++) {
+	    		if( unsortedSequences.get(i).length() > unsortedSequences.get(i+1).length() ) {
+	    			String str1 = unsortedSequences.get(i);
+	    			String str2 = unsortedSequences.get(i+1);
+	    			
+	    			unsortedSequences.set(i, str2);
+	    			unsortedSequences.set(i+1, str1);
+
+	    		}
+	    	}
+    	 }
+		return unsortedSequences;
+	}
+
+	public static List<String> sortWords(List<String> words) {
+		// TODO Auto-generated method stub
+		for (int k = 0; k < words.size(); k++) {
+	    	for (int i = 0; i < words.size()-1; i++) {
+	    		if( words.get(i).compareTo(words.get(i+1))>0 ) {
+	    			String str1 = words.get(i);
+	    			String str2 = words.get(i+1);
+	    			
+	    			words.set(i, str2);
+	    			words.set(i+1, str1);
+
+
+	    		}
+	    	}
+    	 }
+		
+		return words;
+	}
 }
